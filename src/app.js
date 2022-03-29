@@ -1,9 +1,11 @@
 const express = require("express");
+const routes = require("./routes");
 
-const app = express ();
+const app = express();
 
-app.get("/", (req, res) => {
-    res.send("Hello world!");
-});
+app.use(express.json());
+
+app.use(routes);
 
 app.listen(4000, () => console.log ("Servidor rodando na porta 4000"));
+
